@@ -1,7 +1,7 @@
 # Project & Task Handler    
 A django webapp to manage Projects and Tasks. The web app is csrf protected and has a sqlite database which stores already feeded information and are managed using django ORM (Object-Relational Mapper). 
 
-<img src="screenshots/homepage.png" width="800" height="480" />
+<img src="screenshots/homepage.png" width="900" height="480" />
 
 ## Description: 
 The webapp is run on Django with a html and jinja template front end. 
