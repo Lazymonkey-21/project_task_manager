@@ -1,0 +1,26 @@
+<!-- Connecting base page with Task detail page -->
+{% extends 'project/base.html' %}
+
+
+{% block content %}
+
+<!-- Detail view of task -->
+{% for obj in tasks %}
+
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">Duration - {{ obj.start }} : {{ obj.end }}</a>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'task-update' obj.id %}">Update</a>
+        <a class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'task-delete' obj.id %}">Delete</a>
+      </div>
+      <h2 class="article-title">{{ obj.name }}</h2>
+      <p class="article-content">{{ obj.description }}</p>
+    </div>
+  </article>
+  
+
+{% endfor %}
+  
+    
+{% endblock content %}

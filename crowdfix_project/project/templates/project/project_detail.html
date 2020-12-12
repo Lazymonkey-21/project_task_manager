@@ -1,0 +1,47 @@
+<!-- Connecting base page with Project detail page -->
+{% extends 'project/base.html' %}
+
+
+{% block content %}
+<!-- Project details -->
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">Duration - {{ object.duration }} days</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'project-update' object.id %}">Update</a>
+            <a class="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'project-delete' object.id %}">Delete</a>
+          </div>
+          <h2 class="article-title">{{ object.title }}</h2>
+          <p class="article-content">{{ object.description }}</p>
+        </div>
+      </article>
+      <div class="media-body">
+        <h2>Tasks</h2>
+        <a class="btn btn-outline-secondary btn-sm mt-1 mb-2" href="{% url 'task-create' object.id %}">Add Tasks +</a>
+      </div>
+<!-- Project details end -->
+
+<!-- Listing tasks inside Project -->
+        {% for task in tasks %}
+          {% if  object.id  ==  task.task_id.id %}
+            
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <small class="mr-2" href="#">Start date - {{ task.start }} End date - {{ task.end }} days</small>
+                  <!-- <small class="text-muted">{{ project.date_posted|date:"F d, Y" }}</small> -->
+                </div>
+                <h2><a class="article-title" href="{% url 'task-detail' pk=object.id pk1=task.id %}">{{ task.name }}</a></h2>
+                <p class="article-content">{{ task.description }}</p>
+              </div>
+            </article>
+          {% endif %}
+            
+        
+        {% endfor %}
+<!-- Listing end -->
+          
+      
+{% endblock content %}
+    
+   

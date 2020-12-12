@@ -1,0 +1,22 @@
+<!-- Connecting base page with home page -->
+{% extends 'project/base.html' %}
+
+<!-- Home page content -->
+{% block content %}
+    <h1>Project home!</h1>
+    <!-- List projects using object passed by ListView-->
+    {% for project in projects %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">Duration - {{ project.duration }} days</a>
+          </div>
+          <!-- Passing project id through project-detail tag -->
+          <h2><a class="article-title" href="{% url 'project-detail' project.id %}">{{ project.title }}</a></h2>
+          <p class="article-content">{{ project.description }}</p>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock content %}
+    
+   

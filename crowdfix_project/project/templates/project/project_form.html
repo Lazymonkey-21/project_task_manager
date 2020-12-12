@@ -1,0 +1,22 @@
+<!-- Connecting base page with Project form page -->
+{% extends 'project/base.html' %}
+
+<!-- Crispy form to make forms more elegant -->
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">New Project</legend>
+            <!-- passing filter to form -->
+            {{ form|crispy }} 
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Add project</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}
+   
