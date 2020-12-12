@@ -41,4 +41,4 @@ django , django-crispy-forms
 
 ## Demo:  
 
-<img src="screenshots/demo.gif" width="720" height="480" />
+<img src="screenshots/demo.gif" width="900" height="480" />
