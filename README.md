@@ -35,9 +35,6 @@ django , django-crispy-forms
 4. Change to crowdfix_project
 5. python manage.py runserver
 
-## Benchmark:
-
-<img src="assests/benchmark.png" width="640" height="480" />
 
 ## Demo:  
 
