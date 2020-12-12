@@ -21,7 +21,7 @@ class Task(models.Model):
     description = models.TextField()
     start = models.DateField()
     end = models.DateField()
-    task_id = models.ForeignKey('Project',on_delete=models.CASCADE)
+    task_id = models.ForeignKey('Project',on_delete=models.CASCADE,null=True)
     def __str__(self):
         return self.name
     #to return to address after ( Task creation , updation )

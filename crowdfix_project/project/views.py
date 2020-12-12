@@ -79,6 +79,11 @@ class TaskUpdateView(UpdateView):
 class TaskDeleteView(DeleteView):
     model = Task
     success_url = '/'
+    def get_context_data(self, **kwargs):  
+        context = super().get_context_data(**kwargs)
+        x= self.get_object()
+        context["project"] = x.task_id.id #filtering on the basis task id
+        return context
 
 def about(request):
     return render(request,'project/about.html',{'title':'about'})

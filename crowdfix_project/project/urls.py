@@ -22,6 +22,6 @@ urlpatterns = [
     path('project/<int:pk>/task/<int:pk1>',TaskDetailView.as_view(),name = 'task-detail'),
     path('project/task/<int:pk>/update',TaskUpdateView.as_view(),name = 'task-update'),
     path('project/task/<int:pk>/delete',TaskDeleteView.as_view(),name = 'task-delete'),
-    path('project/<int:pki>/task/new',TaskCreateView.as_view(),name = 'task-create'),
+    path('project/<int:pk>/task/new',TaskCreateView.as_view(),name = 'task-create'),
     path('about/',views.about,name = 'project-about')
 ]

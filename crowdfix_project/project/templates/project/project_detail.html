@@ -29,7 +29,6 @@
               <div class="media-body">
                 <div class="article-metadata">
                   <small class="mr-2" href="#">Start date - {{ task.start }} End date - {{ task.end }} days</small>
-                  <!-- <small class="text-muted">{{ project.date_posted|date:"F d, Y" }}</small> -->
                 </div>
                 <h2><a class="article-title" href="{% url 'task-detail' pk=object.id pk1=task.id %}">{{ task.name }}</a></h2>
                 <p class="article-content">{{ task.description }}</p>

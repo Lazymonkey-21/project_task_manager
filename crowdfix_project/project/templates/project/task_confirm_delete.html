@@ -11,7 +11,7 @@
             <!-- Buttons to Accept or delete -->
             <div class="form-group">
                 <button class="btn btn-outline-danger" type="submit">Yes,Delete</button>
-                <a class="btn btn-outline-secondary" href="{% url 'task-detail' object.id %}">Cancel</a>
+                <a class="btn btn-outline-secondary" href="{% url 'task-detail' pk=project pk1=object.id  %}">Cancel</a>
             </div>
         </fieldset>
     </form>
